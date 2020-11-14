@@ -10,5 +10,5 @@ thead {
 }
 .table td, .table th {
 
-  border-top: 0px solid #dee2e6;
+  border-top: .5px solid #dee2e61c;
 }

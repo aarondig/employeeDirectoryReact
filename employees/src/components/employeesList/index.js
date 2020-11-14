@@ -14,18 +14,18 @@ function List(props) {
     </tr>
   </thead>
   <tbody>
-  {/* {props.data.map((card) => ( */}
-          {/* // <div key={card.id} className="card" onClick={props.handleClick}>
+  {props.data.map((card) => (
+          // <div key={card.id} className="card" onClick={props.handleClick}>
           //   <img id={card.id} src={card.image} className="card-img-top" />
-          // </div> */}
+          // </div>
           <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>3-28-2001</td>
+          <th scope="row"></th>
+          <td>{card.name}</td>
+          <td>{card.phone}</td>
+          <td>{card.email}</td>
+          <td>{card.dob}</td>
         </tr>
-        {/* ))} */}
+        ))}
   </tbody>
 </table>
 </article>;
