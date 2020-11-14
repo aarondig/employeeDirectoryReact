@@ -3,12 +3,19 @@
     margin: 50px;
     background: linear-gradient(to right, #1c1c1c, #1e1e1e) !important;
     box-shadow: -1rem 0 3rem #000 !important;
+   
   }
 thead {
   background: rgba(255, 255, 255, 0.1);
-
 }
 .table td, .table th {
 
   border-top: .5px solid #dee2e61c;
+}
+img {
+  border: 0;
+  padding: .05rem;
+  background-color: none !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
 }

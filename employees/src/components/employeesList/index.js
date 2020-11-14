@@ -19,7 +19,9 @@ function List(props) {
           //   <img id={card.id} src={card.image} className="card-img-top" />
           // </div>
           <tr>
-          <th scope="row"></th>
+          <th scope="row">
+          <img src={card.image} alt={card.name} />
+          </th>
           <td>{card.name}</td>
           <td>{card.phone}</td>
           <td>{card.email}</td>
