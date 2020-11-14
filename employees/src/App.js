@@ -1,4 +1,4 @@
-import React, {useReducer} from "react";
+import React, {useReducer, useState} from "react";
 import Wrapper from "./components/wrapper";
 import Banner from "./components/banner";
 import List from "./components/employeesList"
@@ -35,13 +35,16 @@ function reducer(state, action) {
 }
 
 function App() {
-const [employees, setEmployees] = useReducer(reducer, 0);
-
+const [employees, setEmployees] = useReducer(reducer, {Employees});
+const [text, setText] = useState();
 
   return (
     <div className="App">
       <Wrapper>
         <Banner />
+        <form>
+          <input value={text} onChange={e.target.value}></input>
+        </form>
         <List data={Employees} edit={setEmployees}/>
       </Wrapper>
     </div>
