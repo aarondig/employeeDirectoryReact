@@ -7,7 +7,7 @@ function List(props) {
   <thead>
     <tr>
       <th scope="col">Profile</th>
-      <th scope="col">Name</th>
+      <th scope="col" onClick={nameSort()}>Name</th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
       <th scope="col">Date of Birth</th>
@@ -22,7 +22,7 @@ function List(props) {
           <th scope="row">
           <img src={card.image} alt={card.name} />
           </th>
-          <td>{card.name}</td>
+          <td className={card.name}>{card.name}</td>
           <td>{card.phone}</td>
           <td>{card.email}</td>
           <td>{card.dob}</td>
