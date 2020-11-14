@@ -5,33 +5,44 @@ import List from "./components/employeesList"
 import Employees from "./components/employees.json"
 import './App.css';
 
-
-
-function App() {
-
-  const [employees, dispatch] = useReducer((state, action) => {
-    if (action === "sort") {
-      return state + 1;
-    } else if (action === "subtract") {
-      return state - 1;
-    } else {
+function reducer(state, action) {
+  switch (action.type) {
+    case "search":
+      return [
+        ...state,
+        {
+          id: state.length * Math.random(),
+          name: action.name
+        }
+      ];
+    case "sort":
+      return state.filter((_, index) => {
+        return index !== action.index;
+      });
+    case "prioritize":
+      return state.map((item, index) => {
+        if (index === action.index) {
+          return Object.assign({}, item, {
+            priority: !item.priority
+          });
+        }
+        return item;
+      });
+    default:
       return state;
     }
-  }, 0);
 
-  function search(){
-    const searchResults = [];
+}
 
-
-  }
-
+function App() {
+const [employees, setEmployees] = useReducer(reducer, 0);
 
 
   return (
     <div className="App">
       <Wrapper>
         <Banner />
-        <List data={Employees} sort={dispatch("sort")}/>
+        <List data={Employees} edit={setEmployees}/>
       </Wrapper>
     </div>
   );

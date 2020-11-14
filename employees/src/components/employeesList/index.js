@@ -7,7 +7,8 @@ function List(props) {
   <thead>
     <tr>
       <th scope="col">Profile</th>
-      <th scope="col" onClick={nameSort()}>Name</th>
+      <th scope="col"><a onClick ={() => setEmployees({type: "sort"})}>Name</a>
+      </th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
       <th scope="col">Date of Birth</th>
