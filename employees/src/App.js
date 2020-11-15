@@ -6,6 +6,7 @@ import Employees from "./components/employees.json"
 import './App.css';
 
 function reducer(state, action) {
+  console.log("runnign");
   switch (action.type) {
     case "search":
       return action.input;
@@ -31,7 +32,7 @@ function reducer(state, action) {
 
 
 function App() {
-const [employeesState, setEmployees] = useReducer(reducer, Employees);
+const [employees, dispatch] = useReducer(reducer, Employees);
 const [text, setText] = useState();
 
 // setEmployees({
@@ -43,13 +44,13 @@ const [text, setText] = useState();
     <div className="App">
       <Wrapper>
         <Banner />
-        {/* <form onSubmit={enter => {
+        <form onSubmit={enter => {
           enter.preventDefault()
-          setEmployees({ type: "search", text })
+          dispatch({ type: "search", text })
           }}>
           <input value={text} onChange={enter => enter.target.value}></input>
-        </form> */}
-        <List data={employeesState} setEmployees={setEmployees}/>
+        </form>
+        <List employees={employees} setEmployees={employees, dispatch}/>
       </Wrapper>
     </div>
   );

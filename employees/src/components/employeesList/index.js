@@ -1,13 +1,13 @@
-import React from "react";
+import React, {useReducer} from "react";
 import "./style.css";
 
-function List(employees, setEmployees) {
+function List({employees, setEmployees}) {
   return <article className="container d-flex justify-content-center">
   <table className="table table-dark">
   <thead>
     <tr>
       <th scope="col">Profile</th>
-      <th scope="col"><a onClick ={() => setEmployees({type: "sort"})}>Name</a>
+      <th scope="col"><a onClick ={ () => setEmployees({ type: "sort" })}>Name</a>
       </th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
@@ -15,7 +15,7 @@ function List(employees, setEmployees) {
     </tr>
   </thead>
   <tbody>
-  {employees.data.map((card) => (
+  {employees.map((card) => (
           <tr>
           <th key={card.id} scope="row">
           <img src={card.image} alt={card.name} />
