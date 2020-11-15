@@ -1,7 +1,7 @@
 import React, {useReducer} from "react";
 import "./style.css";
 
-function List( {employees, setEmployees, value}) {
+function List( {employees, setEmployees}) {
   return <article className="container d-flex justify-content-center">
   <table className="table table-dark">
   <thead>
@@ -15,9 +15,7 @@ function List( {employees, setEmployees, value}) {
     </tr>
   </thead>
   <tbody>
-  
-
-  {employees.filter(employee => employee.includes(value) ).map((card) => (
+  {employees.map((card) => (
           <tr>
           <th key={card.id} scope="row">
           <img src={card.image} alt={card.name} />

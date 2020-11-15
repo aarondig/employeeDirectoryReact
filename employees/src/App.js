@@ -29,23 +29,11 @@ function search(value){
 }
 
 
-
-
-setEmployees({
-  type: "search",
-  input: null
-});
-
   return (
     <div className="App">
       <Wrapper>
         <Banner />
-        <form onSubmit={e => {
-          e.preventDefault()
-          dispatch({ type: "search", text })
-          }}>
-          <input type="text" value={text} onChange={e => e.target.value}></input>
-        </form>
+        {/* <input className="input col-sm-6" value={text} onChange={search} placeholder="Search Employees"/> */}
         <List employees={employees} setEmployees={employees, dispatch}/>
       </Wrapper>
     </div>
