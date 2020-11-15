@@ -6,14 +6,11 @@ import Employees from "./components/employees.json"
 import './App.css';
 
 function reducer(state, action) {
-  console.log("runnign");
   switch (action.type) {
     case "search":
-      return action.input;
+      return {employees: [...Employees, { text: action.text}]};
     case "sort":
-      return state.filter((_, index) => {
-        return index !== action.index;
-      });
+      return [...state].sort((a,b)=>(a.name>b.name) ? 1: -1);
     // case "prioritize":
     //   return state.map((item, index) => {
     //     if (index === action.index) {

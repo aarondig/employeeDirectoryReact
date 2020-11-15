@@ -1,7 +1,7 @@
 import React, {useReducer} from "react";
 import "./style.css";
 
-function List({employees, setEmployees}) {
+function List( {employees, setEmployees}) {
   return <article className="container d-flex justify-content-center">
   <table className="table table-dark">
   <thead>
