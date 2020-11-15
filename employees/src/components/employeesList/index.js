@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function List(props) {
+function List(employees, setEmployees) {
   return <article className="container d-flex justify-content-center">
   <table className="table table-dark">
   <thead>
@@ -15,12 +15,9 @@ function List(props) {
     </tr>
   </thead>
   <tbody>
-  {props.data.map((card) => (
-          // <div key={card.id} className="card" onClick={props.handleClick}>
-          //   <img id={card.id} src={card.image} className="card-img-top" />
-          // </div>
+  {employees.data.map((card) => (
           <tr>
-          <th scope="row">
+          <th key={card.id} scope="row">
           <img src={card.image} alt={card.name} />
           </th>
           <td className={card.name}>{card.name}</td>

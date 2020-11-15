@@ -8,43 +8,47 @@ import './App.css';
 function reducer(state, action) {
   switch (action.type) {
     case "search":
-      return [
-        ...state,
-        {
-          id: state.length * Math.random(),
-          name: action.name
-        }
-      ];
+      return action.input;
     case "sort":
       return state.filter((_, index) => {
         return index !== action.index;
       });
-    case "prioritize":
-      return state.map((item, index) => {
-        if (index === action.index) {
-          return Object.assign({}, item, {
-            priority: !item.priority
-          });
-        }
-        return item;
-      });
+    // case "prioritize":
+    //   return state.map((item, index) => {
+    //     if (index === action.index) {
+    //       return Object.assign({}, item, {
+    //         priority: !item.priority
+    //       });
+    //     }
+    //     return item;
+    //   });
     default:
       return state;
     }
 
 }
 
+
+
 function App() {
-const [employees, setEmployees] = useReducer(reducer, {Employees});
+const [employeesState, setEmployees] = useReducer(reducer, {data: [Employees]});
 const [text, setText] = useState();
+
+setEmployees({
+  type: "search",
+  input: results
+});
 
   return (
     <div className="App">
       <Wrapper>
         <Banner />
-        <form>
-          <input value={text} onChange={e.target.value}></input>
-        </form>
+        {/* <form onSubmit={enter => {
+          enter.preventDefault()
+          setEmployees({ type: "search", text })
+          }}>
+          <input value={text} onChange={enter => enter.target.value}></input>
+        </form> */}
         <List data={Employees} edit={setEmployees}/>
       </Wrapper>
     </div>
