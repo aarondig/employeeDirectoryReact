@@ -31,13 +31,13 @@ function reducer(state, action) {
 
 
 function App() {
-const [employeesState, setEmployees] = useReducer(reducer, {data: [Employees]});
+const [employeesState, setEmployees] = useReducer(reducer, Employees);
 const [text, setText] = useState();
 
-setEmployees({
-  type: "search",
-  input: results
-});
+// setEmployees({
+//   type: "search",
+//   input: null
+// });
 
   return (
     <div className="App">
@@ -49,7 +49,7 @@ setEmployees({
           }}>
           <input value={text} onChange={enter => enter.target.value}></input>
         </form> */}
-        <List data={Employees} edit={setEmployees}/>
+        <List data={employeesState} setEmployees={setEmployees}/>
       </Wrapper>
     </div>
   );
