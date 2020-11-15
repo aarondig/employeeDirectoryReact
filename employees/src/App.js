@@ -8,18 +8,9 @@ import './App.css';
 function reducer(state, action) {
   switch (action.type) {
     case "search":
-      return {employees: [...Employees, { text: action.text}]};
+     
     case "sort":
       return [...state].sort((a,b)=>(a.name>b.name) ? 1: -1);
-    // case "prioritize":
-    //   return state.map((item, index) => {
-    //     if (index === action.index) {
-    //       return Object.assign({}, item, {
-    //         priority: !item.priority
-    //       });
-    //     }
-    //     return item;
-    //   });
     default:
       return state;
     }
@@ -32,20 +23,28 @@ function App() {
 const [employees, dispatch] = useReducer(reducer, Employees);
 const [text, setText] = useState();
 
-// setEmployees({
-//   type: "search",
-//   input: null
-// });
+function search(value){
+
+
+}
+
+
+
+
+setEmployees({
+  type: "search",
+  input: null
+});
 
   return (
     <div className="App">
       <Wrapper>
         <Banner />
-        <form onSubmit={enter => {
-          enter.preventDefault()
+        <form onSubmit={e => {
+          e.preventDefault()
           dispatch({ type: "search", text })
           }}>
-          <input value={text} onChange={enter => enter.target.value}></input>
+          <input type="text" value={text} onChange={e => e.target.value}></input>
         </form>
         <List employees={employees} setEmployees={employees, dispatch}/>
       </Wrapper>
