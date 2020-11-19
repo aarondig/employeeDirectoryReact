@@ -14,21 +14,23 @@ function reducer(state, action) {
     }
 
 }
-
+function handleToggle(state, action){
+  console.log("click")
+  
+    if (state === true){
+      // setEmployees({ type: "sort" })
+      console.log(state);
+    }
+}
 
 
 function App() {
 const [employees, setEmployees] = useReducer(reducer, Employees);
 const [text, setText] = useState("");
 
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(handleToggle, false);
   
 
-  if (toggle === true){
-    // setEmployees({ type: "sort" })
-    console.log(toggle);
-  }
- 
 
 
 
