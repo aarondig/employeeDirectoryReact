@@ -7,12 +7,8 @@ import './App.css';
 
 function reducer(state, action) {
   switch (action.type) {
-    case "search":
-     if (action.text = this.value){
-
-     }
     case "sort":
-      return [...state].sort((a,b)=>(a.name>b.name) ? 1: -1);
+      return [...state].sort((a, b)=>(a.name > b.name) ? 1: -1);
     default:
       return state;
     }
@@ -22,8 +18,17 @@ function reducer(state, action) {
 
 
 function App() {
-const [employees, dispatch] = useReducer(reducer, Employees);
+const [employees, setEmployees] = useReducer(reducer, Employees);
 const [text, setText] = useState("");
+
+  const [toggle, setToggle] = useState(false);
+  
+
+  if (toggle === true){
+    // setEmployees({ type: "sort" })
+    console.log(toggle);
+  }
+ 
 
 
 
@@ -32,7 +37,7 @@ const [text, setText] = useState("");
       <Wrapper>
         <Banner />
         <input className="input col-sm-6" value={text} onChange={e => setText(e.target.value)} placeholder="Search Employees"/>
-        <List employees={employees} setEmployees={employees, dispatch} text={text}/>
+        <List employees={employees} toggle={toggle} setToggle={setToggle} text={text}/>
       </Wrapper>
     </div>
   );

@@ -1,13 +1,13 @@
 import React, {useReducer} from "react";
 import "./style.css";
 
-function List( {employees, setEmployees, text}) {
+function List( {employees, toggle, setToggle, text}) {
   return <article className="container d-flex justify-content-center">
   <table className="table table-dark">
   <thead>
     <tr>
       <th scope="col">Profile</th>
-      <th scope="col"><a onClick ={ () => setEmployees({ type: "sort" })}>Name</a>
+      <th scope="col"><a onClick ={() => setToggle(!toggle)}>Name</a>
       </th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
