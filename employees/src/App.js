@@ -23,7 +23,7 @@ function reducer(state, action) {
 
 function App() {
 const [employees, dispatch] = useReducer(reducer, Employees);
-const [text, setText] = useState({value: ""});
+const [text, setText] = useState("");
 
 
 
