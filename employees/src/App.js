@@ -8,7 +8,9 @@ import './App.css';
 function reducer(state, action) {
   switch (action.type) {
     case "search":
-     
+     if (action.text = this.value){
+
+     }
     case "sort":
       return [...state].sort((a,b)=>(a.name>b.name) ? 1: -1);
     default:
@@ -21,20 +23,16 @@ function reducer(state, action) {
 
 function App() {
 const [employees, dispatch] = useReducer(reducer, Employees);
-const [text, setText] = useState();
+const [text, setText] = useState({value: ""});
 
-function search(value){
-
-
-}
 
 
   return (
     <div className="App">
       <Wrapper>
         <Banner />
-        {/* <input className="input col-sm-6" value={text} onChange={search} placeholder="Search Employees"/> */}
-        <List employees={employees} setEmployees={employees, dispatch}/>
+        <input className="input col-sm-6" value={text} onChange={e => setText(e.target.value)} placeholder="Search Employees"/>
+        <List employees={employees} setEmployees={employees, dispatch} text={text}/>
       </Wrapper>
     </div>
   );
