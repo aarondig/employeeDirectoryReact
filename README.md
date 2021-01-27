@@ -1,11 +1,15 @@
 
-# README Generator
+
+
+<img src="Assets/Screen Shot 2021-01-26 at 4.15.16 PM.png" alt="User Image">
+
+# Employee Directory
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This application uses React.js and CSS to display information on employees and their individual data, imported from a JSON file, in a 'dark mode' table for user accessability. Employee data is displayed using the '.map' function in React. When clicking on the column headers, React's onClick function is triggered, and the data is sorted by that column name.
+This application uses React.js and CSS to display information on employees and their individual data, imported from a JSON file, in a 'dark mode' table for user accessability. Employee data is displayed using the '.map' function in React. When clicking on the column headers, React's onClick function is triggered, and the data is sorted by that column name. 
 
 <br>
 

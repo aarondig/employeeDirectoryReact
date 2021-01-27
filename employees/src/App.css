@@ -1,7 +1,7 @@
 input {
   margin-top: 48px;
   padding:10px;
-  background: linear-gradient(to right, rgb(35, 35, 35), rgb(255, 255, 255, .1));
+  background: rgb(35, 35, 35);
   border:none;
   color:  rgba(255, 255, 255, 0.9) !important;
   font-family: "Poppins", sans-serif;
