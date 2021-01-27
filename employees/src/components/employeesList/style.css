@@ -9,7 +9,6 @@ thead {
   background: rgba(255, 255, 255, 0.1);
 }
 .table td, .table th {
-
   border-top: .5px solid #dee2e61c;
 }
 img {
@@ -18,4 +17,7 @@ img {
   background-color: none !important;
   max-width: 50px !important;
   max-height: 50px !important;
+}
+tr {
+  padding: 20px;
 }
